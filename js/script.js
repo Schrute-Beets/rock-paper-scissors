@@ -1,30 +1,32 @@
 function getPlayerChoice() {
     let validPlayerInput = false;
+    let playerInput;
+    let playerChoice
     
     while (validPlayerInput == false) {
-        let playerInput = prompt("Throw your choice!")
-        let playerSelection = playerInput.toLowerCase();
-        if (playerSelection == "rock" || playerSelection == "paper" || playerSelection == "scissors") {
+        playerInput = prompt("Throw your choice!")
+        playerChoice = playerInput.toLowerCase();
+        if (playerChoice == "rock" || playerChoice == "paper" || playerChoice == "scissors") {
             validPlayerInput = true;
         } else {
             console.log("Please throw a valid choice");
         }
     }
-    console.log(playerSelection);
-    return playerSelection;
+    return playerChoice;
 }
 
 
 function getComputerChoice() {
     let number = Math.floor(Math.random()*3);
-    let computerSelection;
+    let computerChoice;
+    
     if (number == 0){
-        computerSelection = "rock";
+        computerChoice = "rock";
     } else if (number == 1) {
-        computerSelection = "paper";
+        computerChoice = "paper";
     } else {
-        computerSelection = "scissors";
+        computerChoice = "scissors";
     }
-    return computerSelection;
+    return computerChoice;
 }
 
