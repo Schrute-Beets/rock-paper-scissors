@@ -1,5 +1,3 @@
-let playerChoice = getPlayerChoice();
-let computerChoice = getComputerChoice();
 let match;
 
 playGame();
@@ -9,18 +7,23 @@ function playGame() {
     let wins = 0;
     let losses = 0;
     let ties = 0;
-
+    
     for (let i = 0; i < 5; i++) {
-    playRound(playerChoice, computerChoice);
-    if (match == "loss") {
-        losses++;
-    }
-    else if (match == "tie") {
-        ties++;
-    }
-    else {
-        wins++;
-    }
+        let playerChoice = getPlayerChoice();
+        let computerChoice = getComputerChoice();
+        playRound(playerChoice, computerChoice);
+        if (match == "loss") {
+            losses++;
+        }
+        else if (match == "tie") {
+            ties++;
+        }
+        else {
+            wins++;
+        }
+
+        console.log("Wins: " + wins + "   " + "Losses: " + losses + "   " + "Ties: " + ties);
+        
     }
 }
 
@@ -64,37 +67,37 @@ function playRound(playerChoice, computerChoice) {
     
     if (playerChoice == "rock") {
         if (computerChoice == "paper") {
-            match = loss;
+            match = "loss";
             console.log("You lose!");
             } else if (computerChoice == "rock") {
-                match = tie;
+                match = "tie";
                 console.log("It's a tie!");
             } else {
-                match = win;
+                match = "win";
                 console.log("You win!");
             }
     }
     else if (playerChoice == "paper") {
         if (computerChoice == "scissors") {
-            match = loss;
+            match = "loss";
             console.log("You lose!");
         } else if (computerChoice == "paper") {
-            match = tie;
+            match = "tie";
             console.log("It's a tie!");
         } else {
-            match = win;
+            match = "win";
             console.log("You win!");
         }
     }
     else {
         if (computerChoice == "rock") {
-            match = loss;
+            match = "loss";
             console.log("You lose!");
         } else if (computerChoice == "scissors") {
-            match = tie;
+            match = "tie";
             console.log("It's a tie!");
         } else {
-            match = win;
+            match = "win";
             console.log("You win!");
         }
     }
